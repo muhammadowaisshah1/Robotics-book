@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Playfair Display', 'serif'],
-        body: ['Source Sans 3', 'sans-serif'],
+        heading: ['IBM Plex Serif', 'Georgia', 'serif'],
+        body: ['IBM Plex Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,17 +52,33 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        module: {
-          1: "hsl(var(--module-1))",
-          2: "hsl(var(--module-2))",
-          3: "hsl(var(--module-3))",
-          4: "hsl(var(--module-4))",
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
         },
+        info: "hsl(var(--info))",
+        warning: "hsl(var(--warning))",
+        tip: "hsl(var(--tip))",
+        danger: "hsl(var(--danger))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+      },
+      maxWidth: {
+        'content': '48rem',
+        'sidebar': '18rem',
       },
       keyframes: {
         "accordion-down": {
@@ -76,26 +93,28 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        "slide-up": {
+          from: { transform: "translateY(20px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
         "slide-in-left": {
           from: { transform: "translateX(-20px)", opacity: "0" },
           to: { transform: "translateX(0)", opacity: "1" },
-        },
-        "slide-in-right": {
-          from: { transform: "translateX(20px)", opacity: "0" },
-          to: { transform: "translateX(0)", opacity: "1" },
-        },
-        "float": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out forwards",
-        "slide-in-left": "slide-in-left 0.5s ease-out forwards",
-        "slide-in-right": "slide-in-right 0.5s ease-out forwards",
-        "float": "float 3s ease-in-out infinite",
+        "slide-up": "slide-up 0.5s ease-out forwards",
+        "slide-in-left": "slide-in-left 0.4s ease-out forwards",
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '48rem',
+          },
+        },
       },
     },
   },
